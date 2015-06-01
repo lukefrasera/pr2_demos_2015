@@ -1,0 +1,9 @@
+message Points {
+	repeated Point points = 1;
+}
+
+message Point {
+	required double x = 1;
+	required double y = 2;
+	required double z = 3;
+}
