@@ -33,6 +33,12 @@
     <ClInclude Include="points.pb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ForegroundDetector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectDetector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -41,10 +47,16 @@
     <ClCompile Include="SensorReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="points.pb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ForegroundDetector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="CheckerBoardCalibration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="points.pb.cc">
+    <ClCompile Include="ObjectDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CalibrationMain.cpp">

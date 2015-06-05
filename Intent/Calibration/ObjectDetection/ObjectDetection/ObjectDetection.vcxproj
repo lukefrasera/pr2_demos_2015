@@ -14,7 +14,7 @@
     <ProjectGuid>{F4588CE3-8871-4D41-BC4C-10FBA9A5D08F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ObjectDetection</RootNamespace>
-    <ProjectName>Calibration</ProjectName>
+    <ProjectName>IntentRecognizer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -60,7 +60,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Users\Mohammad\Documents\University\PhD\Vision\protobuf-2.6.1\vsprojects\Debug;C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\Lib\x86;C:\Users\Mohammad\Documents\University\PhD\Vision\opencv\build\x86\vc12\staticlib;C:\Users\Mohammad\Documents\University\PhD\Vision\opencv\build\x86\vc12\lib;C:\Program Files %28x86%29\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Kinect20.lib;opencv_core300d.lib;opencv_imgproc300d.lib;opencv_calib3d300d.lib;opencv_highgui300d.lib;opencv_hal300d.lib;opencv_imgcodecs300d.lib;opencv_flann300d.lib;ippicvmt.lib;IlmImfd.lib;libtiffd.lib;libpngd.lib;libjasperd.lib;libjpegd.lib;libwebpd.lib;zlibd.lib;comctl32.lib;Ws2_32.lib;libzmq-v120-mt-4_0_4.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Kinect20.lib;opencv_core300d.lib;opencv_imgproc300d.lib;opencv_calib3d300d.lib;opencv_highgui300d.lib;opencv_hal300d.lib;opencv_imgcodecs300d.lib;opencv_flann300d.lib;opencv_videoio300d.lib;opencv_video300d.lib;ippicvmt.lib;IlmImfd.lib;libtiffd.lib;libpngd.lib;libjasperd.lib;libjpegd.lib;libwebpd.lib;zlibd.lib;comctl32.lib;Ws2_32.lib;libzmq-v120-mt-4_0_4.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -72,12 +72,16 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Mohammad\Documents\University\PhD\Vision\protobuf-2.6.1\vsprojects\include;C:\Users\Mohammad\Documents\University\PhD\Vision\opencv\build\include;C:\Program Files %28x86%29\ZeroMQ 4.0.4\include;C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Kinect20.lib;opencv_core300.lib;opencv_imgproc300.lib;opencv_calib3d300.lib;opencv_highgui300.lib;opencv_hal300.lib;opencv_imgcodecs300.lib;opencv_flann300.lib;opencv_videoio300.lib;opencv_video300.lib;opencv_features2d300.lib;ippicvmt.lib;IlmImf.lib;libtiff.lib;libpng.lib;libjasper.lib;libjpeg.lib;libwebp.lib;zlib.lib;comctl32.lib;Ws2_32.lib;libzmq-v120-mt-4_0_4.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Mohammad\Documents\University\PhD\Vision\opencv\build\x86\vc12\staticlib;C:\Users\Mohammad\Documents\University\PhD\Vision\opencv\build\x86\vc12\lib;C:\Users\Mohammad\Documents\University\PhD\Vision\protobuf-2.6.1\vsprojects\Release;C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\Lib\x86;C:\Program Files %28x86%29\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -85,15 +89,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckerBoardCalibration.h" />
+    <ClInclude Include="ForegroundDetector.h" />
+    <ClInclude Include="ObjectDetector.h" />
     <ClInclude Include="points.pb.h" />
     <ClInclude Include="SensorReader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CheckerBoardCalibration.cpp" />
-    <ClCompile Include="points.pb.cc" />
     <ClCompile Include="CalibrationMain.cpp" />
+    <ClCompile Include="CheckerBoardCalibration.cpp" />
+    <ClCompile Include="ForegroundDetector.cpp" />
+    <ClCompile Include="ObjectDetector.cpp" />
+    <ClCompile Include="points.pb.cc" />
     <ClCompile Include="SensorReader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
