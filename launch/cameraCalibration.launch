@@ -1,0 +1,15 @@
+<launch>
+  <arg name="depth_topic_arg" default="/camera/depth/image_raw"/>
+  <arg name="color_topic_arg" default="/camera/rgb/image_raw"/>
+  <arg name="color_camera_params_arg" default="/camera/rgb/camera_info"/>
+  <arg name="depth_camera_params_arg" default="/camera/depth/camera_info"/>
+
+  <node name="estimate_point_cloud_transformation" pkg="pr2_demos_2015"
+    type="estimate_point_cloud_transformation.py" respawn="false"
+     output="screen">
+     <param name="depth_topic" value="$(arg depth_topic_arg)" />
+     <param name="color_topic" value="$(arg color_topic_arg)" />
+     <param name="color_camera_params" value="$(arg color_camera_params_arg)" />
+     <param name="depth_camera_params" value="$(arg depth_camera_params_arg)" />
+   </node>
+</launch>
